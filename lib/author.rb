@@ -8,3 +8,4 @@ def posts
     post.author == self
   end
 end
+end
