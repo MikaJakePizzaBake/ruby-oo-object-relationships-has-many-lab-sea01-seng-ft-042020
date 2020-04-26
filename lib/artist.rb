@@ -4,6 +4,7 @@ attr_reader :name, :songs
     @name = name
     @songs = []
     @songs << song
+    song.artist = self
   end
 
 end
