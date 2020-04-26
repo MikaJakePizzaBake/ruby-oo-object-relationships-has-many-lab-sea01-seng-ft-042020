@@ -1,13 +1,13 @@
 require 'pry'
 
-class User
+class Artist
 
-  attr_reader :username
+  attr_reader :name
 
   @@all = [ ]
 
-  def initialize(username)
-    @username = username
+  def initialize(name)
+    @name = name
     # @tweets = [ ] -> we are not storing collections anymore
 
     @@all << self
