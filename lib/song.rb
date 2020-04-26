@@ -4,7 +4,7 @@ class Song
   @@all = [ ]
 
   # the child will always be responsible for storing the parent information
-  def initialize(song, artist)
+  def initialize(song)
     @song = song
     @artist = artist
 
