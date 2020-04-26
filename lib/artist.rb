@@ -5,5 +5,5 @@ attr_reader :name, :songs
     @songs = []
     @songs << song
   end
-  
+
 end
