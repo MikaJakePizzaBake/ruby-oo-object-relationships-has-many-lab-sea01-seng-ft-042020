@@ -1,34 +1,29 @@
-require 'pry'
-
 class Artist
+    attr_accessor :name
 
-  attr_reader :name
+    def initialize(name)
+        @name = name
+        @songs = []
+    end
 
-  @@all = [ ]
+    def songs
+        Song.all.select do |song|
+            song.artist == self
+        end
+    end
 
-  def initialize(name)
-    @name = name
-    # @tweets = [ ] -> we are not storing collections anymore
+    def add_song(song)
+        @songs << song
+        song.artist = self
+    end
 
-    @@all << self
-  end
+    def add_song_by_name(name)
+        song = Song.new(name)
+        @songs << song
+        song.artist = self
+    end
 
-  def songs
-    # binding.pry
-    Song.all.select { |song| song.artist == self }
-    # coffee_dad.tweets => [ <# Tweet >, <# tweets> ]
-  end
-
-  def self.all
-    @@all
-  end
-
-  def add_song(song)
-    # binding.pry
-    song = Song.new(song, self)
-    # @tweets << tweet
-  end
-  # def tweets
-  #   @tweets
-  # end
+    def self.song_count
+        Song.all.length
+    end
 end
