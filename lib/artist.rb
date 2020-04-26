@@ -13,9 +13,9 @@ class Artist
     @@all << self
   end
 
-  def tweets
+  def songs
     # binding.pry
-    Tweet.all.select { |tweet| tweet.user == self }
+    Song.all.select { |song| song.artist == self }
     # coffee_dad.tweets => [ <# Tweet >, <# tweets> ]
   end
 
@@ -23,9 +23,9 @@ class Artist
     @@all
   end
 
-  def post_tweet(message)
+  def add_song(song)
     # binding.pry
-    tweet = Tweet.new(message, self)
+    song = Song.new(song, self)
     # @tweets << tweet
   end
   # def tweets
