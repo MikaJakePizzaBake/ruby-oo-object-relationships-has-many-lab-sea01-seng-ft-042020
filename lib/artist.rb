@@ -8,4 +8,7 @@ class Artist
       song.artist == self
     end
   end
+  def add_song(name)
+
+
 end
