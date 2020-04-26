@@ -1,12 +1,11 @@
 class Song
-  attr_reader :song, :artist
+  attr_reader :song
 
   @@all = [ ]
 
   # the child will always be responsible for storing the parent information
   def initialize(song)
     @song = song
-    @artist = artist
 
     save
   end
