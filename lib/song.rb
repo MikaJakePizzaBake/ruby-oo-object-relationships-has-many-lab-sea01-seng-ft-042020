@@ -1,21 +1,22 @@
 class Song
-  attr_reader :song
+    attr_accessor :name, :artist
 
-  @@all = [ ]
+    @@all = []
 
-  # the child will always be responsible for storing the parent information
-  def initialize(song)
-    @song = song
+    def initialize(name)
+        @name = name
+        @@all << self
+    end
 
-    save
-  end
+    def self.all
+        @@all
+    end
 
-  def self.all
-    @@all
-  end
-
-  private
-    def save
-      @@all << self
+    def artist_name
+        if @artist == nil
+        return nil
+        elsif artist.songs.include?(self)
+            return artist.name
+        end
     end
 end
