@@ -12,11 +12,5 @@ class Song
         @@all
     end
 
-    def artist_name
-        if @artist == nil
-        return nil
-        elsif artist.songs.include?(self)
-            return artist.name
-        end
-    end
+  
 end
