@@ -1,12 +1,12 @@
-class Tweet
-  attr_reader :message, :user
+class Song
+  attr_reader :song, :artist
 
   @@all = [ ]
 
   # the child will always be responsible for storing the parent information
-  def initialize(message, user)
-    @message = message
-    @user = user
+  def initialize(song, artist)
+    @song = song
+    @artist = artist
 
     save
   end
